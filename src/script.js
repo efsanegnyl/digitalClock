@@ -1,4 +1,5 @@
 getTime()
+
 function getTime() {
     let now = new Date()
     let hours = now.getHours()
