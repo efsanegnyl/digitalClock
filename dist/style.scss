@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    color: white;
+    font-family: "Rajdhani";
+    font-size: 40px;
+    background-color: #000000;
+    overflow-y: hidden;
+}
+
+section {
+    h2 {
+        position: relative;
+        margin-top: 20px;
+        text-transform: uppercase;
+        background-color: #3333ff;
+        width: 400px;
+        padding-left: 15px;
+        margin-bottom: 25px;
+        border-radius: 7px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: 0;
+            height: 90px;
+            width: 8px;
+            background-color: #ff3300;
+            border-radius: 0 7px 7px 0;
+        }
+    }
+
+    .date {
+        color: rgba($color: #ffffff, $alpha: .6);
+        padding-left: 15px;
+    }
+}
+
+.clock {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+
+    p {
+        text-transform: uppercase;
+        font-size: 40px;
+        letter-spacing: 20px;
+        margin-bottom: 15px;
+        position: relative;
+
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        width: 610px;
+
+        .clock-items {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            margin-bottom: 30px;
+            position: relative;
+            -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1));
+
+            ::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 40px;
+                font-size: 25px;
+                letter-spacing: 10px;
+                background: rgba($color: #000000, $alpha: .4);
+                text-transform: uppercase;
+            }
+        }
+
+        .hour {
+            background-color: #3333ff;
+            position: relative;
+
+            ::after {
+                content: "hours";
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+        }
+
+        .minute {
+            background-color: #ff3300;
+            position: relative;
+
+            ::after {
+                content: "minutes";
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+        }
+
+        .second {
+            background-color: #ff0066;
+            position: relative;
+
+            ::after {
+                content: "seconds";
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            }
+        }
+    }
+}
