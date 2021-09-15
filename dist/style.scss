@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600&display=swap');
+@import "mediaQuery";
 
 * {
     margin: 0;
@@ -24,11 +25,22 @@ section {
         position: relative;
         margin-top: 20px;
         text-transform: uppercase;
-        background-color: #3333ff;
-        width: 400px;
+        display: inline-flex;
         padding-left: 15px;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
+        padding-left: 15px;
+        padding-right: 35px;
         border-radius: 7px;
+        border-top: 1px solid #3333ff;
+        box-shadow: #3333ff 1px 4px 4px;
+
+        @include responsive(tab-port) {
+            font-size: 30px;
+        }
+
+        @include responsive(phone) {
+            font-size: 20px;
+        }
 
         &::before {
             content: "";
@@ -39,12 +51,31 @@ section {
             width: 8px;
             background-color: #ff3300;
             border-radius: 0 7px 7px 0;
+
+            @include responsive(tab-port) {
+                height: 50px;
+            }
+
+            @include responsive(phone) {
+                height: 40px;
+            }
         }
     }
 
     .date {
-        color: rgba($color: #ffffff, $alpha: .6);
+        color: rgba(#ffffff, $alpha: .6);
         padding-left: 15px;
+
+        @include responsive(tab-land) {}
+
+        @include responsive(tab-port) {
+            font-size: 20px;
+        }
+
+        @include responsive(phone) {
+            font-size: 18px;
+            margin-bottom: 45px;
+        }
     }
 }
 
@@ -55,6 +86,18 @@ section {
     align-items: center;
     margin-bottom: 15px;
 
+    @include responsive(tab-land) {
+        font-size: 40px;
+    }
+
+    @include responsive(tab-port) {
+        font-size: 30px;
+    }
+
+    @include responsive(phone) {
+        font-size: 20px;
+    }
+
     p {
         text-transform: uppercase;
         font-size: 40px;
@@ -62,12 +105,33 @@ section {
         margin-bottom: 15px;
         position: relative;
 
+        @include responsive(tab-land) {}
+
+        @include responsive(tab-port) {
+            font-size: 30px;
+        }
+
+        @include responsive(phone) {
+            font-size: 18px;
+            letter-spacing: 10px;
+        }
+
     }
 
     &-container {
         display: flex;
         justify-content: space-between;
         width: 610px;
+
+        @include responsive(tab-port) {
+            width: 460px;
+            font-size: 30px;
+        }
+
+        @include responsive(phone) {
+            font-size: 20px;
+            width: 310px;
+        }
 
         .clock-items {
             width: 200px;
@@ -80,6 +144,16 @@ section {
             position: relative;
             -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.1));
 
+            @include responsive(tab-port) {
+                width: 150px;
+                height: 150px;
+            }
+
+            @include responsive(phone) {
+                width: 100px;
+                height: 100px;
+            }
+
             ::after {
                 content: "";
                 position: absolute;
@@ -88,9 +162,14 @@ section {
                 width: 100%;
                 height: 40px;
                 font-size: 25px;
-                letter-spacing: 10px;
+                letter-spacing: 1px;
                 background: rgba($color: #000000, $alpha: .4);
                 text-transform: uppercase;
+
+                @include responsive(phone) {
+                    height: 20px;
+                    font-size: 14px;
+                }
             }
         }
 
